@@ -3,9 +3,9 @@ import Container from "../Container";
 import ContactInfo from "./ContactInfo";
 import Image from "next/image";
 import Link from "next/link";
-import Label from "./Label";
-import Input from "./Input";
-import InputContainer from "./InputContainer";
+import Label from "../Label";
+import Input from "../Input";
+import InputContainer from "../InputContainer";
 
 export default function Contact() {
     return (

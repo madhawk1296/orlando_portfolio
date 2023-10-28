@@ -1,13 +1,21 @@
 import gallery from "@/data/gallery";
 import openSans from "@/fonts/openSans";
 import ArtImage from "./ArtImage";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { Database } from "@/types/supabase";
-import { SectionType } from "../page";
+import { SectionType } from "../../page";
+import { createServerClient } from "@supabase/ssr";
 
 export default async function Artwork({ params: { artwork }}: { params: { artwork: string }}) {
-    const supabase = createServerComponentClient<Database>({ cookies})
+    const cookieStore = cookies()
+    const supabase = createServerClient<Database>(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
+      cookies: {
+        get(name: string) {
+          return cookieStore.get(name)?.value
+        },
+      },
+    })
+    
     const { data: items } = await supabase.from("items").select().eq("id", artwork)
 
     console.log(artwork ,items?.[0]);
