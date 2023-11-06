@@ -17,8 +17,6 @@ export default async function Artwork({ params: { artwork }}: { params: { artwor
     })
     
     const { data: items } = await supabase.from("items").select().eq("id", artwork)
-
-    console.log(artwork ,items?.[0]);
     const { name, year, mainImage, section, dimensions, images } = items?.[0]!
 
     return (

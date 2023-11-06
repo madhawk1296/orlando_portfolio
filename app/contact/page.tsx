@@ -28,15 +28,15 @@ export default function Contact() {
             <div className="flex flex-col gap-8 w-[660px]">
                 <InputContainer>
                     <Label title="Name" secondary=" (required)" />
-                    <Input placeholder="Your name" />
+                    <Input name="name" placeholder="Your name" />
                 </InputContainer>
                 <InputContainer>
                     <Label title="Email" secondary=" (required)" />
-                    <Input placeholder="your.email@example.com" />
+                    <Input name="email" placeholder="your.email@example.com" />
                 </InputContainer>
                 <InputContainer>
                     <Label title="Message" secondary=" (required)" />
-                    <Input />
+                    <Input name="message" />
                 </InputContainer>
                 <button className={` py-[10px] bg-gray-800 text-gray-50 ${openSans.medium} tracking-wide rounded-lg shadow`}>Submit</button>
             </div>

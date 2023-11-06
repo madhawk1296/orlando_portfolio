@@ -9,18 +9,19 @@ export async function middleware(request: NextRequest) {
 
     try {
         const { data: { user } } = await supabase.auth.getUser()
-        if (user && currentPath !== '/admin/manage' && currentPath !== '/admin/reset') {
+        if (user && (!currentPath.startsWith('/admin/manage') || currentPath.startsWith('/admin/login'))) {
             return NextResponse.redirect(new URL('/admin/manage', request.url))
         }
 
-        if (!user && currentPath !== '/admin/login') {
+        if (!user && !currentPath.startsWith('/admin/login') && !currentPath.startsWith('/admin/reset')) {
             return NextResponse.redirect(new URL('/admin/login', request.url))
         }
     } catch(e) {
         console.log(e)
     }
 
-    return NextResponse.next()}
+    return NextResponse.next()
+}
  
 // See "Matching Paths" below to learn more
 export const config = {

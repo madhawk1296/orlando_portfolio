@@ -7,14 +7,15 @@ export const dynamic = 'force-dynamic'
 export async function GET(req: NextRequest) {
   const { origin, searchParams} = new URL(req.url)
   const code = searchParams.get('code')
+  const next = searchParams.get('next')
 
   if (code) {
     const supabase = supabaseServerClient()
     const { data: { user, session }, error } = await supabase.auth.exchangeCodeForSession(code);
-    if (user) {
-        return NextResponse.redirect(`${origin}/Admin`)
+
+    if (user && next) {
+      return NextResponse.redirect(`${origin}/admin/change`)
     }
   }
-  // URL to redirect to after sign in process completes
-  return NextResponse.redirect(`${origin}/Admin/Login`)
+  return NextResponse.redirect(`${origin}/admin`)
 }
