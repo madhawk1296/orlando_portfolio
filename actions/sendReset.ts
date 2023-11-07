@@ -8,8 +8,6 @@ export default async function sendReset(formdata: FormData): Promise<{error: str
     const supabase = supabaseServerClient();
 
     try {
-        console.log(`${getUrl()}/auth/callback?next=/admin/change`)
-        /*
         const { error, data } = await supabase.auth.resetPasswordForEmail(email, {
             redirectTo: `${getUrl()}/auth/callback?next=/admin/change`
         })
@@ -17,9 +15,8 @@ export default async function sendReset(formdata: FormData): Promise<{error: str
         if(error) {
             throw new Error(error.message)
         }
-        */
 
-        return { error: `${getUrl()}/auth/callback?next=/admin/change` } 
+        return { error: null } 
 
     } catch(e: any) {
         console.log(e.message)
