@@ -12,7 +12,9 @@ export default function Remove({ items }: { items: Tables<"items">[]}) {
     const [itemsToRemove, setItemsToRemove] = useState<Tables<"items">[]>([])
 
     const addRemoveItem = (item: Tables<"items">) => {
-        setItemsToRemove(prevItems => [...prevItems, item])
+        const existingItem = itemsToRemove.find(cur => cur.id == item.id)
+
+        if(!existingItem) setItemsToRemove(prevItems => [...prevItems, item])
     }
 
     const cancelRemoval = () => {
@@ -39,7 +41,7 @@ export default function Remove({ items }: { items: Tables<"items">[]}) {
             <h1 className="text-xl tracking-wide text-gray-800">Choose the Items you want to delete.</h1>
             {itemsToRemove.length > 0  && (
                 <div className="flex flex-col gap-4">
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 flex-wrap">
                         {itemsToRemove.map((item, index) => <RemoveItem item={item} />)}
                     </div>
                     <div className="flex items-center gap-4">

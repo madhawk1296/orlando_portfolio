@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.smooth {
+.smoothe {
     transition-property: all;
     transition-duration: 200ms;
 }

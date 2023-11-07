@@ -17,12 +17,12 @@ export default async function Artwork({ params: { artwork }}: { params: { artwor
     })
     
     const { data: items } = await supabase.from("items").select().eq("id", artwork)
-    const { name, year, mainImage, section, dimensions, images } = items?.[0]!
+    const { name, year, section, dimensions, images } = items?.[0]!
 
     return (
-        <div className="relative w-full flex flex-col py-[60px] gap-8">
+        <div className="relative w-full flex flex-col py-[20px] md:py-[60px] gap-8">
             <div className="relative flex flex-col gap-1.5">
-                <h1 className={`text-4xl tracking-wide text-gray-800 ${openSans.bold}`}>{name}</h1>
+                <h1 className={`text-3xl md:text-4xl tracking-wide text-gray-800 ${openSans.bold}`}>{name}</h1>
                 <h1 className="text-2xl text-gray-600 tracking-wide">Year: {year}</h1>
                 {dimensions && <h1 className="text-2xl text-gray-600 tracking-wide">Dimensions: {dimensions[0]} x {dimensions[1]}{dimensions[2] && ` x ${dimensions[2]}`}</h1>}
             </div>

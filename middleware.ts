@@ -10,7 +10,10 @@ export async function middleware(request: NextRequest) {
     try {
         const { data: { user } } = await supabase.auth.getUser()
         if (user && (!currentPath.startsWith('/admin/manage') || currentPath.startsWith('/admin/login'))) {
-            return NextResponse.redirect(new URL('/admin/manage', request.url))
+            console.log(currentPath.startsWith('/admin/change'))
+            if(!currentPath.startsWith('/admin/change')) {
+                return NextResponse.redirect(new URL('/admin/manage', request.url))
+            }
         }
 
         if (!user && !currentPath.startsWith('/admin/login') && !currentPath.startsWith('/admin/reset')) {

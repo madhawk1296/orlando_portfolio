@@ -1,6 +1,6 @@
 export default function Vase({ selected }: { selected: boolean }) {
     return (
-        <svg className={`h-full smooth ${selected ? "stroke-gray-800" : "stroke-gray-400"}`} viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className={`h-full smoothe ${selected ? "stroke-gray-800" : "stroke-gray-400"}`} viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M151.706 103.982C118.221 122.079 102.166 132.319 97.161 150.905C82.5309 209.201 146.446 309.24 161.05 314.395"  stroke-opacity="0.9" strokeWidth="20" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M242.465 97.4648C242.025 101.43 241.681 104.458 245.379 106.4C305.064 137.757 302.724 161.277 303.748 171.005C307.491 206.558 268.817 302.411 235.793 315.254" stroke-opacity="0.9" strokeWidth="20" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M164.059 316.113C192.691 322.308 206.195 322.454 234.076 316.298" stroke-opacity="0.9" strokeWidth="20" stroke-linecap="round" stroke-linejoin="round"/>

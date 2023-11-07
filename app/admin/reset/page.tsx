@@ -23,7 +23,7 @@ export default function Reset() {
 
     return (
         <Container title="Reset" >
-            <form action={handleAction} className="relative flex flex-col items-center gap-8 w-[500px]">
+            <form action={handleAction} className="relative flex flex-col items-center gap-8 w-full md:w-[500px]">
                 <InputContainer>
                     <Label title="Email" secondary=" (required)" />
                     <Input name="email" placeholder="Your email" />

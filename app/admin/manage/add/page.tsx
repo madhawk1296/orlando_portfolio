@@ -32,7 +32,7 @@ export default function Add() {
     }
 
     return (
-        <form className="relative w-[800px] flex flex-col gap-5" action={handleAction} >
+        <form className="relative w-full md:w-[800px] flex flex-col gap-5" action={handleAction} >
             <InputContainer>
                 <Label title="Name" />
                 <Input name="name" placeholder="Portrait" />

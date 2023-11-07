@@ -35,7 +35,7 @@ export default function Admin() {
 
     return (
         <Container title="Change Password">
-            <form className="relative flex flex-col items-center gap-8 w-[500px]" action={handleAction} >
+            <form className="relative flex flex-col items-center gap-8 w-full md:w-[500px]" action={handleAction} >
                 <InputContainer>
                     <Label title="New Password" secondary=" (required)" />
                     <Input value={password} isPassword={true} onChange={onPasswordChange} name="password" placeholder="Password" />

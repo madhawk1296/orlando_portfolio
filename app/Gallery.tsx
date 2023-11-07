@@ -15,12 +15,12 @@ export default function Gallery({ gallery }: { gallery: Tables<"items">[] } ) {
     return (
         <main className="flex flex-col">
             <Header />
-            <div className="flex flex-col gap-10 px-[60px] pb-[50px] ">
-                <div className="w-full flex">
+            <div className="flex flex-col gap-10 md:px-[60px] pb-[50px] ">
+                <div className="w-full flex sticky top-0 z-10 bg-white">
                     <GalleryTab section="paints" title="Paints" selected={section == "paints"} />
                     <GalleryTab section="sculptures" title="Sculptures" selected={section == "sculptures"} />
                 </div>
-                <div className="grid grid-cols-3 gap-10 ">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-[20px] md:px-[0px]">
                     {selectedGallery.map((galleryItem, index) => <GalleryItem key={index} item={galleryItem} />)}
                 </div>
             </div>

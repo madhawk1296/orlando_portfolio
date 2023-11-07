@@ -12,7 +12,7 @@ export default async function Item({ params: { id }}: { params: { id: string }})
     const { name, created_at, dimensions, images, mainImage, year, section} = items?.[0]!    
 
     return (
-        <div className="relative w-[800px] flex flex-col gap-12">
+        <div className="relative w-full px-[20px] md:px-[0] md:w-[800px] flex flex-col gap-12">
             <div className="w-full flex flex-col gap-4">
                 <Name id={id} name={name} />
                 <Year id={id} year={year} />

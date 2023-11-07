@@ -1,8 +1,6 @@
 'use server'
 
 import { supabaseServerClient } from "@/clients/supabase"
-import { revalidatePath } from "next/cache"
-import { cookies } from 'next/headers'
 
 export default async function login(formdata: FormData): Promise<{error: string | null}> {
     const email = formdata.get("email") as string

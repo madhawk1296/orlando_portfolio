@@ -9,6 +9,6 @@ export default function Input({ name, placeholder, isPassword=false, isNumber=fa
     }
 
     return (
-        <input required name={name} value={value} onChange={onChange && handleChange} className="w-full h-[60px] p-[15px] outline-none border-2 rounded-lg shadow text-lg placeholder:text-gray-400 focus:border-gray-500 smooth" type={isPassword ? "password" : isNumber ? "number" : "text"} placeholder={placeholder} />
+        <input required name={name} value={value} onChange={onChange && handleChange} className="w-full h-[60px] p-[15px] outline-none border-2 rounded-lg shadow text-lg placeholder:text-gray-400 focus:border-gray-500 smoothe" type={isPassword ? "password" : isNumber ? "number" : "text"} placeholder={placeholder} />
     )
 }

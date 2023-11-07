@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: ReactNode}) {
     return (
         <div className="w-full flex flex-col">
             <Header />
-            <div className="relative w-full flex flex-col px-[60px]">
+            <div className="relative w-full flex flex-col px-[10px] md:px-[60px]">
                 <Link href="/">
                     <button className={`text-xl tracking-wide text-gray-800 ${openSans.medium} flex items-center gap-2`}>
                         <div className="h-[30px] relative">
