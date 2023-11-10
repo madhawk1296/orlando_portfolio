@@ -1,7 +1,7 @@
 import Gallery from "./Gallery";
 import { supabaseServerClient } from "@/clients/supabase";
 
-export type SectionType = "paints" | "sculptures"
+export type SectionType = "paintings" | "sculptures"
 
 export default async function Home() {
   const supabase = supabaseServerClient()

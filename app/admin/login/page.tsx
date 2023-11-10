@@ -7,15 +7,16 @@ import ResetPassword from "./ResetPassword";
 import Container from "../manage/Container";
 import { useRouter } from "next/navigation";
 import login from "@/actions/login";
+import { useState } from "react";
 
 
 export default function Login() {
     const router = useRouter()
+    const [error, setError] = useState<string | null>(null)
 
     const handleAction = async (formData: FormData) => {
         const { error } = await login(formData)
-        console.log(error)
-        router.refresh()
+        error ? setError(error) : router.refresh()
     }
 
     return (
@@ -31,6 +32,7 @@ export default function Login() {
                 </InputContainer>
                 <ResetPassword />
                 <button className="w-full py-[10px] text-gray-50 tracking-wide text-lg bg-gray-800 rounded-lg shadow">Sign In</button>
+                {error && <h1 className="w-fit text-red-400 text-lg tracking-wide">{error}</h1>}
             </form>
         </Container>
     )

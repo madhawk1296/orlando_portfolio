@@ -21,6 +21,7 @@ export default async function login(formdata: FormData): Promise<{error: string 
         return { error: null } 
 
     } catch(e: any) {
-        return { error: e }
+        console.log(e)
+        return { error: e.message }
     }
 }

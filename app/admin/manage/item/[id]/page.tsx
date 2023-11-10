@@ -5,6 +5,7 @@ import Image from "next/image";
 import Name from "./Name";
 import Year from "./Year";
 import Dimensions from "./Dimensions";
+import ArtImage from "./ArtImage";
 
 export default async function Item({ params: { id }}: { params: { id: string }}) {
     const supabase = supabaseServerClient()
@@ -21,7 +22,7 @@ export default async function Item({ params: { id }}: { params: { id: string }})
             <div className="w-full flex flex-col gap-3">
                 <h1 className={`text-2xl tracking-wide text-gray-800 ${openSans.medium}`}>Images</h1>
                 <div className="flex flex-wrap gap-4">
-                    {images?.map((image, index) => <Image className="border-2 rounded-lg" alt="Image" width={200} height={200} src={`${process.env.NEXT_PUBLIC_GALLERY_URL}/${section}/${image}`} />)}
+                    {images?.map((image, index) => <ArtImage image={image} section={section} />)}
                 </div>
             </div>
         </div>
