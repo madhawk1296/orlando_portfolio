@@ -7,6 +7,7 @@ export default async function addItem(formdata: FormData): Promise<{error: strin
     const year = Number(formdata.get("year") as string) 
     const dimensions = formdata.get("dimensions") as string 
     const dimensionsArray = dimensions.split(",").map(dimension => Number(dimension))
+    const description = formdata.get("description") as string
     const section = formdata.get("section") as "paintings" | "sculptures" 
     const images = formdata.getAll("images") as File[]
     const mainImage = Number(formdata.get("main_image") as string)
@@ -33,6 +34,7 @@ export default async function addItem(formdata: FormData): Promise<{error: strin
             name,
             year,
             dimensions: dimensions ? dimensionsArray : null,
+            description: description || null,
             section,
             images: imageNames,
             mainImage: imageNames[mainImage]

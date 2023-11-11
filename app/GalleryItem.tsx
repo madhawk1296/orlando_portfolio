@@ -1,4 +1,3 @@
-import { GalleryItemType } from "@/data/gallery";
 import openSans from "@/fonts/openSans";
 import { Tables } from "@/types/tables";
 import Image from "next/image";

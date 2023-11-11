@@ -46,6 +46,10 @@ export default function Add() {
                 <Input name="dimensions" placeholder="48,48,1.5" />
             </InputContainer>
             <InputContainer>
+                <Label title="Description" />
+                <textarea name="description" className="border-2 rounded-xl shadow outline-none p-[10px]" />
+            </InputContainer>
+            <InputContainer>
                 <Label title="Section" />
                 <Section />
             </InputContainer>

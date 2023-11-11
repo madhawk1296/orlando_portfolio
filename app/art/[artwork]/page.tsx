@@ -1,4 +1,3 @@
-import gallery from "@/data/gallery";
 import openSans from "@/fonts/openSans";
 import ArtImage from "./ArtImage";
 import { cookies } from "next/headers";
@@ -17,7 +16,7 @@ export default async function Artwork({ params: { artwork }}: { params: { artwor
     })
     
     const { data: items } = await supabase.from("items").select().eq("id", artwork)
-    const { name, year, section, dimensions, images } = items?.[0]!
+    const { name, year, section, dimensions, images, description } = items?.[0]!
 
     return (
         <div className="relative w-full flex flex-col py-[20px] md:py-[60px] gap-8">
@@ -25,6 +24,7 @@ export default async function Artwork({ params: { artwork }}: { params: { artwor
                 <h1 className={`text-3xl md:text-4xl tracking-wide text-gray-800 ${openSans.bold}`}>{name}</h1>
                 <h1 className="text-2xl text-gray-600 tracking-wide">Year: {year}</h1>
                 {dimensions && <h1 className="text-2xl text-gray-600 tracking-wide">Dimensions: {dimensions[0]} x {dimensions[1]}{dimensions[2] && ` x ${dimensions[2]}`}</h1>}
+                {description && <h1 className="mt-[20px] text-lg text-gray-700 tracking-wide whitespace-pre-line">{description}</h1>}
             </div>
             <div className="relative w-full flex flex-col gap-6 items-center">
                 {images!.map((image, index) => <ArtImage key={index} section={section as SectionType} image={image} />)}

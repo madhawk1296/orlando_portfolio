@@ -12,6 +12,7 @@ export interface Database {
       items: {
         Row: {
           created_at: string
+          description: string | null
           dimensions: number[] | null
           id: number
           images: string[] | null
@@ -22,6 +23,7 @@ export interface Database {
         }
         Insert: {
           created_at?: string
+          description?: string | null
           dimensions?: number[] | null
           id?: number
           images?: string[] | null
@@ -32,6 +34,7 @@ export interface Database {
         }
         Update: {
           created_at?: string
+          description?: string | null
           dimensions?: number[] | null
           id?: number
           images?: string[] | null
