@@ -47,7 +47,7 @@ export default function Dimensions({ id, dimensions }: { id: string, dimensions:
         </form>
     ) : (
         <div className="flex items-center gap-2">
-            <h1 className={`text-2xl tracking-wide text-gray-800 ${openSans.medium}`}>{dimensions ? `${dimensions[0]} X ${dimensions[1]}${dimensions[2] ? ` X ${dimensions[2]}` : ''}` : "Add dimensions"}</h1>
+            <h1 className={`text-2xl tracking-wide text-gray-800 ${openSans.medium}`}>{dimensions ? `${dimensions[0]} X ${dimensions[1]}${dimensions[2] ? ` X ${dimensions[2]}` : ''} inches` : "Add dimensions"}</h1>
             <button onClick={toggleEditMode} className="relative h-[20px]">
                 <Pencil />
             </button>

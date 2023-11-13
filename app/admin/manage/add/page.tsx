@@ -42,7 +42,7 @@ export default function Add() {
                 <Input isNumber={true} name="year" placeholder="2023" />
             </InputContainer>
             <InputContainer>
-                <Label title="Dimensions" secondary=" - comma separated" />
+                <Label title="Dimensions (inches)" secondary=" - comma separated" />
                 <Input name="dimensions" placeholder="48,48,1.5" />
             </InputContainer>
             <InputContainer>

@@ -23,7 +23,7 @@ export default async function Artwork({ params: { artwork }}: { params: { artwor
             <div className="relative flex flex-col gap-1.5">
                 <h1 className={`text-3xl md:text-4xl tracking-wide text-gray-800 ${openSans.bold}`}>{name}</h1>
                 <h1 className="text-2xl text-gray-600 tracking-wide">Year: {year}</h1>
-                {dimensions && <h1 className="text-2xl text-gray-600 tracking-wide">Dimensions: {dimensions[0]} x {dimensions[1]}{dimensions[2] && ` x ${dimensions[2]}`}</h1>}
+                {dimensions && <h1 className="text-2xl text-gray-600 tracking-wide">Dimensions: {dimensions[0]} x {dimensions[1]}{dimensions[2] && ` x ${dimensions[2]}`} inches</h1>}
                 {description && <h1 className="mt-[20px] text-lg text-gray-700 tracking-wide whitespace-pre-line">{description}</h1>}
             </div>
             <div className="relative w-full flex flex-col gap-6 items-center">
