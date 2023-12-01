@@ -23,7 +23,7 @@ export default function Contact() {
             setResponse("Email Sent")
         }
     }
-
+ 
     return (
         <Container>
             <div className="flex flex-col gap-8 md:gap-14 w-full md:w-fit">
