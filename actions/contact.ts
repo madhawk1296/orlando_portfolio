@@ -12,10 +12,10 @@ export default async function contact(formdata: FormData): Promise<{error: strin
 
     try {
         const { data, error } = await resend.emails.send({
-            from: "onboarding@resend.dev",
+            from: `Contact Form Inquiry <${process.env.NEXT_PUBLIC_WEBSITE_EMAIL}>`,
             to: [process.env.NEXT_PUBLIC_ORLANDO_EMAIL!],
-            subject: name,
-            react: ContactEmail({email, message })!,
+            subject: `${name} - Inquiry`,
+            react: ContactEmail({name, email, message })!,
         });
 
     } catch(e: any) {
